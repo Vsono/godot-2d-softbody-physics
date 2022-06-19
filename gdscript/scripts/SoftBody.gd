@@ -61,3 +61,13 @@ static func update(delta, body, gravity=9.8):
 			continue
 		body.velocity[i].y += gravity * point_mass * delta
 		body.position[i] += body.velocity[i] * delta
+
+
+static func draw(node: Node2D, body, draw_points: bool=true, draw_connections: bool=true):
+	if draw_points:
+		for position in body.position:
+			node.draw_circle(position, 1, Color.white)
+	
+	if draw_connections:
+		for spring in body.spring:
+			node.draw_line(body.position[spring[0]], body.position[spring[1]], Color.white)

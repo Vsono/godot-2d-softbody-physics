@@ -16,15 +16,4 @@ func _physics_process(delta):
 
 func _draw():
 	if softbody:
-		draw_softbody(softbody, false)
-
-
-func draw_softbody(body, draw_points: bool=true, draw_connections: bool=true):
-	if draw_points:
-		for position in body.position:
-			draw_circle(position, 1, Color.white)
-	
-	if draw_connections:
-		for spring in body.spring:
-			draw_line(body.position[spring[0]], body.position[spring[1]], Color.white)
-		
+		SoftBody.draw(self, softbody, false)
