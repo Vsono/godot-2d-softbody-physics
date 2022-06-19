@@ -3,7 +3,7 @@
 # velocity = [Vector2, ...]
 # fixed = [bool, ...]
 # spring = [[index, index, length], ...]
-static func create_softbody(rows: int, columns: int, width: float, height: float, cloth: bool=false, mass: float=10, stiffness: float = 1, damping_factor: float = 1) -> Dictionary:
+static func create(rows: int, columns: int, width: float, height: float, cloth: bool=false, mass: float=10, stiffness: float = 1, damping_factor: float = 1) -> Dictionary:
 	var position = []
 	var velocity = []
 	var fixed = []
@@ -39,7 +39,7 @@ static func create_softbody(rows: int, columns: int, width: float, height: float
 	}
 
 
-static func update_softbody(delta, body, gravity=9.8):
+static func update(delta, body, gravity=9.8):
 	for spring in body.spring:
 		var force = Vector2(0, 0)
 
