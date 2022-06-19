@@ -1,0 +1,9 @@
+# Import cache
+.import/
+
+addons/
+
+# Binaries
+bin/
+build/
+lib/
