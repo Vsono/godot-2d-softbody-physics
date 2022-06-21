@@ -5,13 +5,16 @@ const SoftBody = preload("SoftBody.gd")
 var softbody = null
 
 func _ready():
-	softbody = SoftBody.create(20, 20, 300, 300, true, 10, 5)
+	softbody = SoftBody.create(10, 10, 450, 450, true, 10, 600, 30)
 	softbody.fixed[0] = true
-	softbody.fixed[19] = true
+	softbody.fixed[9] = true
+
+	for p in softbody.points:
+		add_child(p)
 
 func _physics_process(delta):
 	if softbody:
-		SoftBody.update(delta * 10, softbody)
+		SoftBody.update(delta, softbody)
 		update()
 
 func _draw():

@@ -1,28 +1,95 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://gdscript/scripts/demoA.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://gdscript/scripts/demoB.gd" type="Script" id=3]
+[ext_resource path="res://gdscript/scene.gd" type="Script" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource( 7 )
 
 [node name="demoA" type="Node2D" parent="."]
 position = Vector2( 157, 121 )
 script = ExtResource( 1 )
 
 [node name="demoB" type="Node2D" parent="."]
-position = Vector2( 605, 116 )
+position = Vector2( 532, 112 )
 script = ExtResource( 3 )
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2( 689, 470 )
+position = Vector2( 635, 835 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 scale = Vector2( 8.78574, 1.45087 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="StaticBody2D/CollisionShape2D"]
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2( 184, 739 )
+rotation = 0.377656
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+scale = Vector2( 8.78574, 1.45087 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D3/CollisionShape2D"]
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2( 1270, 902 )
+rotation = 0.217485
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2( -0.0352783, 2.776 )
+rotation = -0.210232
+scale = Vector2( 17.5276, 3.52711 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D2/CollisionShape2D"]
+texture = ExtResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2( 1775, 355 )
+rotation = 0.552779
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2( -0.0352783, 2.776 )
+rotation = -0.210232
+scale = Vector2( 17.5276, 3.52711 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D4/CollisionShape2D"]
+texture = ExtResource( 2 )
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2( 907, 44 )
+mode = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2( -2.99982, -2 )
+rotation = 0.0226301
+scale = Vector2( 1.34355, 0.664597 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D/CollisionShape2D"]
+texture = ExtResource( 2 )
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="."]
+position = Vector2( 659, 48 )
+linear_velocity = Vector2( 0, 90 )
+angular_damp = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2"]
+position = Vector2( 0, -5 )
+rotation = -0.00967848
+scale = Vector2( 4.1937, 0.989262 )
+z_index = -1
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="RigidBody2D2/CollisionShape2D"]
 texture = ExtResource( 2 )
