@@ -1,6 +1,6 @@
 extends Node2D
 
-const SoftBody = preload("SoftBody.gd")
+const SoftBody = preload("res://src/gdscript/SoftBody.gd")
 
 var softbody = null
 
