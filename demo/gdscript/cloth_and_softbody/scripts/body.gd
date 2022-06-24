@@ -1,8 +1,9 @@
 extends SoftBody2D
 
 func _ready():
-	create(7, 7, 450, 450, false)
+	create(7, 7, 450, 450)
 
+	stiffness = 600
 	auto_draw = true
 
 func _input(event):

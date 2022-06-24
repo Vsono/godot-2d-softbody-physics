@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://icon.png" type="Texture" id=1]
-[ext_resource path="res://demo/gdscript/cloth_and_softbody/scripts/body1.gd" type="Script" id=2]
-[ext_resource path="res://demo/gdscript/cloth_and_softbody/scripts/body2.gd" type="Script" id=3]
+[ext_resource path="res://demo/gdscript/cloth_and_softbody/scripts/body.gd" type="Script" id=3]
 [ext_resource path="res://demo/gdscript/cloth_and_softbody/scripts/scene.gd" type="Script" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -11,11 +10,7 @@ extents = Vector2( 32, 32 )
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
 
-[node name="body1" type="Node2D" parent="."]
-position = Vector2( 157, 121 )
-script = ExtResource( 2 )
-
-[node name="body2" type="Node2D" parent="."]
+[node name="body" type="Node2D" parent="."]
 position = Vector2( 532, 112 )
 script = ExtResource( 3 )
 
